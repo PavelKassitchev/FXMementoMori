@@ -11,7 +11,6 @@ import javafx.stage.Stage;
 
 public class Questionnaire extends Application {
 
-    private static Controller controller;
 
 
     public static void main(String[] args) {
@@ -29,8 +28,7 @@ public class Questionnaire extends Application {
         primaryStage.setResizable(false);
         primaryStage.show();
 
-        controller = loader.getController();
-        controller.setPrevStage(primaryStage);
+
 
     }
 

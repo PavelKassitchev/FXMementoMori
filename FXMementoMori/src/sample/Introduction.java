@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 public class Introduction extends Application {
 
-    private static Controller controller;
+
 
 
     public static void main(String[] args) {
@@ -27,7 +27,6 @@ public class Introduction extends Application {
         primaryStage.setResizable(false);
         primaryStage.show();
 
-        controller = loader.getController();
-        controller.setPrevStage(primaryStage);
+
     }
 }

@@ -9,7 +9,6 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    private static Controller controller;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -22,9 +21,7 @@ public class Main extends Application {
         primaryStage.setResizable(false);
         primaryStage.show();
 
-        controller = loader.getController();
-        controller.setPrevStage(primaryStage);
-        controller.setMain(this);
+
     }
 
 

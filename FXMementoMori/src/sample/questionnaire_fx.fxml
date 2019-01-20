@@ -13,7 +13,7 @@
       <Button layoutX="62.0" layoutY="268.0" mnemonicParsing="false" text="Назад" textAlignment="CENTER" />
       <Button contentDisplay="RIGHT" layoutX="506.0" layoutY="268.0" mnemonicParsing="false" text="Далее" textAlignment="CENTER" onAction="#goNext"/>
       <Label alignment="CENTER" layoutX="157.0" layoutY="70.0" text="ДЛЯ ЗАПУСКА СЧЕТЧИКА ОТВЕТЬТЕ НА ВОПРОСЫ АНКЕТЫ" textAlignment="CENTER" wrapText="true" />
-      <Label alignment="CENTER" layoutX="223.0" layoutY="118.0" prefHeight="39.0" prefWidth="195.0" textAlignment="CENTER" wrapText="true" fx:id="question" />
+      <Label alignment="CENTER" layoutX="223.0" layoutY="118.0" text="Вы курите, или жуете табак, или постоянно торчите там, где курят?" prefHeight="39.0" prefWidth="195.0" textAlignment="CENTER" wrapText="true" fx:id="question" />
       <Group id="radio_group" layoutX="223.0" layoutY="229.0">
          <children>
             <RadioButton mnemonicParsing="false" prefHeight="17.0" prefWidth="101.0" text="Да">
