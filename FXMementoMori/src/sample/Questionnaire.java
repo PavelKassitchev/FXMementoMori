@@ -21,10 +21,15 @@ public class Questionnaire extends Application {
     public void start(Stage primaryStage) throws Exception{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("questionnaire_fx.fxml"));
         Parent root = loader.load();
+        Controller controller = loader.getController();
+
+        controller.getQuestion().setText(Questions.Q1.getQuestion());
+
         primaryStage.setTitle("Memento Mori");
         Image image = new Image(Main.class.getResource("memento_icon.png").toExternalForm());
         primaryStage.getIcons().add(image);
         primaryStage.setScene(new Scene(root, 640, 400));
+        primaryStage.sizeToScene();
         primaryStage.setResizable(false);
         primaryStage.show();
 

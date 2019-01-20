@@ -3,11 +3,9 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-
 
 
 public class Controller {
@@ -22,8 +20,10 @@ public class Controller {
     private static int page;
 
     private Stage prevStage;
-    private Main main;
-    private Questionnaire questionnaire;
+
+    public Label getQuestion() {
+        return question;
+    }
 
 
     public void toIntro(ActionEvent actionEvent) throws Exception {
@@ -32,6 +32,7 @@ public class Controller {
         prevStage.close();
         Introduction introduction = new Introduction();
         introduction.start(new Stage());
+
     }
 
 
@@ -40,14 +41,24 @@ public class Controller {
         Button button = (Button)actionEvent.getSource();
         prevStage = (Stage)button.getScene().getWindow();
         prevStage.close();
-        questionnaire = new Questionnaire();
+        Questionnaire questionnaire = new Questionnaire();
         questionnaire.start(new Stage());
         page++;
 
+
     }
 
-    public void goNext(ActionEvent actionEvent) {
-        question.setText(questions[page++]);
+    public void goNext(ActionEvent actionEvent) throws Exception {
+        if (page == questions.length - 1) {
+            page = 0;
+            Button button = (Button)actionEvent.getSource();
+            prevStage = (Stage)button.getScene().getWindow();
+            prevStage.close();
+            new Main().start(new Stage());
+        }
+        else {
+            question.setText(questions[page++]);
+        }
     }
 
 

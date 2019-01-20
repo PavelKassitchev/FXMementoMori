@@ -18,6 +18,7 @@ public class Main extends Application {
         Image image = new Image(Main.class.getResource("memento_icon.png").toExternalForm());
         primaryStage.getIcons().add(image);
         primaryStage.setScene(new Scene(root, 640, 400));
+        primaryStage.sizeToScene();
         primaryStage.setResizable(false);
         primaryStage.show();
 

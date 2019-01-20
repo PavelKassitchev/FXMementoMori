@@ -11,9 +11,9 @@
    <children>
       <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" text="Отмена" textAlignment="CENTER" />
       <Button layoutX="62.0" layoutY="268.0" mnemonicParsing="false" text="Назад" textAlignment="CENTER" />
-      <Button contentDisplay="RIGHT" layoutX="506.0" layoutY="268.0" mnemonicParsing="false" text="Далее" textAlignment="CENTER" onAction="#goNext"/>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="506.0" layoutY="268.0" mnemonicParsing="false" onAction="#goNext" text="Далее" textAlignment="CENTER" />
       <Label alignment="CENTER" layoutX="157.0" layoutY="70.0" text="ДЛЯ ЗАПУСКА СЧЕТЧИКА ОТВЕТЬТЕ НА ВОПРОСЫ АНКЕТЫ" textAlignment="CENTER" wrapText="true" />
-      <Label alignment="CENTER" layoutX="223.0" layoutY="118.0" text="Вы курите, или жуете табак, или постоянно торчите там, где курят?" prefHeight="39.0" prefWidth="195.0" textAlignment="CENTER" wrapText="true" fx:id="question" />
+      <Label fx:id="question" alignment="CENTER" layoutX="135.0" layoutY="117.0" prefHeight="64.0" prefWidth="371.0" textAlignment="CENTER" wrapText="true" />
       <Group id="radio_group" layoutX="223.0" layoutY="229.0">
          <children>
             <RadioButton mnemonicParsing="false" prefHeight="17.0" prefWidth="101.0" text="Да">

@@ -11,7 +11,6 @@ public class Introduction extends Application {
 
 
 
-
     public static void main(String[] args) {
         launch(args);
     }
@@ -20,10 +19,12 @@ public class Introduction extends Application {
     public void start(Stage primaryStage) throws Exception{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("introduction_fx.fxml"));
         Parent root = loader.load();
+
         primaryStage.setTitle("Memento Mori");
         Image image = new Image(Main.class.getResource("memento_icon.png").toExternalForm());
         primaryStage.getIcons().add(image);
         primaryStage.setScene(new Scene(root, 640, 400));
+        primaryStage.sizeToScene();
         primaryStage.setResizable(false);
         primaryStage.show();
 
