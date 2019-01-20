@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="374.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" text="Отмена" textAlignment="CENTER" />
+      <Button layoutX="62.0" layoutY="268.0" mnemonicParsing="false" text="Назад" textAlignment="CENTER" />
+      <Button contentDisplay="RIGHT" layoutX="506.0" layoutY="268.0" mnemonicParsing="false" text="Далее" textAlignment="CENTER" onAction="#goNext"/>
+      <Label alignment="CENTER" layoutX="157.0" layoutY="70.0" text="ДЛЯ ЗАПУСКА СЧЕТЧИКА ОТВЕТЬТЕ НА ВОПРОСЫ АНКЕТЫ" textAlignment="CENTER" wrapText="true" />
+      <Label alignment="CENTER" layoutX="223.0" layoutY="118.0" prefHeight="39.0" prefWidth="195.0" textAlignment="CENTER" wrapText="true" fx:id="question" />
+      <Group id="radio_group" layoutX="223.0" layoutY="229.0">
+         <children>
+            <RadioButton mnemonicParsing="false" prefHeight="17.0" prefWidth="101.0" text="Да">
+               <toggleGroup>
+                  <ToggleGroup fx:id="radio_group" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton layoutX="105.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="146.0" text="Нет" toggleGroup="$radio_group" />
+            <RadioButton layoutX="255.0" mnemonicParsing="false" text="Не знаю" toggleGroup="$radio_group" />
+         </children>
+      </Group>
+   </children>
+</AnchorPane>
