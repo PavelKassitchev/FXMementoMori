@@ -1,9 +1,10 @@
 package sample;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Date;
 
-public class FXUser implements User {
+public class FXUser implements User, Serializable {
 
     private String name;
     private int gender;
@@ -13,6 +14,12 @@ public class FXUser implements User {
     //TODO below
     // construct a "non-gender" just-born user with default neutral replies to the questions!
     //check vorkability!
+    public FXUser() {
+        name = "Пользователь";
+        gender = 0;
+        birthDate = new Date();
+        userData = new int[Questions.getLength()];
+    }
 
 
     public int getGender() {

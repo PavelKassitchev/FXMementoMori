@@ -23,7 +23,7 @@ public class Questionnaire extends Application {
         Parent root = loader.load();
         Controller controller = loader.getController();
 
-        controller.getQuestion().setText(Questions.Q1.getQuestion());
+        controller.setQuestion();
 
         primaryStage.setTitle("Memento Mori");
         Image image = new Image(Main.class.getResource("memento_icon.png").toExternalForm());

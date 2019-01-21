@@ -4,15 +4,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="374.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="sample.Controller">
+<AnchorPane prefHeight="374.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" text="Сброс" textAlignment="CENTER" />
-      <Button layoutX="9.0" layoutY="268.0" mnemonicParsing="false" text="Перейти к анкете" textAlignment="CENTER" onAction="#toIntro"/>
+      <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#clean" text="Сброс" textAlignment="CENTER" />
+      <Button layoutX="9.0" layoutY="268.0" mnemonicParsing="false" onAction="#toIntro" text="Перейти к анкете" textAlignment="CENTER" />
       <Button contentDisplay="RIGHT" layoutX="483.0" layoutY="268.0" mnemonicParsing="false" text="Закрепить привычку" textAlignment="CENTER" />
-      <Label alignment="CENTER" layoutX="225.0" layoutY="66.0" text="Здравствуйте, Пользователь!" textAlignment="CENTER" />
-      <Label alignment="CENTER" layoutX="223.0" layoutY="103.0" prefHeight="39.0" prefWidth="195.0" text="В среднем человек вашего возраста и привычек доживет до:" textAlignment="CENTER" wrapText="true" />
-      <Label alignment="CENTER" layoutX="241.0" layoutY="179.0" text="Счетчик не установлен" textAlignment="CENTER" />
+      <Label fx:id="greeting" alignment="CENTER" layoutX="225.0" layoutY="66.0" prefHeight="17.0" prefWidth="195.0" textAlignment="CENTER" />
+      <Label alignment="CENTER" layoutX="225.0" layoutY="100.0" prefHeight="39.0" prefWidth="195.0" text="В среднем человек вашего возраста и привычек доживет до:" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="235.0" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="220.0" AnchorPane.topAnchor="100.0" />
+      <Label fx:id="count" alignment="CENTER" layoutX="225.0" layoutY="180.0" prefHeight="17.0" prefWidth="195.0" textAlignment="CENTER" />
    </children>
 </AnchorPane>

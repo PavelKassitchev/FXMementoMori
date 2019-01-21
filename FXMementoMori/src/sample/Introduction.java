@@ -20,6 +20,8 @@ public class Introduction extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("introduction_fx.fxml"));
         Parent root = loader.load();
 
+        Controller controller = loader.getController();
+        controller.setIntro();
         primaryStage.setTitle("Memento Mori");
         Image image = new Image(Main.class.getResource("memento_icon.png").toExternalForm());
         primaryStage.getIcons().add(image);

@@ -7,23 +7,23 @@
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="374.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane prefHeight="374.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" text="Отмена" textAlignment="CENTER" />
-      <Button layoutX="62.0" layoutY="268.0" mnemonicParsing="false" text="Назад" textAlignment="CENTER" />
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="506.0" layoutY="268.0" mnemonicParsing="false" onAction="#goNext" text="Далее" textAlignment="CENTER" />
+      <Button layoutX="62.0" layoutY="268.0" mnemonicParsing="false" onAction="#goPrev" text="Назад" textAlignment="CENTER" />
+      <Button fx:id="next" alignment="CENTER" contentDisplay="CENTER" layoutX="506.0" layoutY="268.0" mnemonicParsing="false" onAction="#goNext" text="Далее" textAlignment="CENTER" />
       <Label alignment="CENTER" layoutX="157.0" layoutY="70.0" text="ДЛЯ ЗАПУСКА СЧЕТЧИКА ОТВЕТЬТЕ НА ВОПРОСЫ АНКЕТЫ" textAlignment="CENTER" wrapText="true" />
       <Label fx:id="question" alignment="CENTER" layoutX="135.0" layoutY="117.0" prefHeight="64.0" prefWidth="371.0" textAlignment="CENTER" wrapText="true" />
-      <Group id="radio_group" layoutX="223.0" layoutY="229.0">
+      <Group layoutX="223.0" layoutY="229.0">
          <children>
-            <RadioButton mnemonicParsing="false" prefHeight="17.0" prefWidth="101.0" text="Да">
+            <RadioButton fx:id="yes" mnemonicParsing="false" prefHeight="17.0" prefWidth="101.0" text="Да">
                <toggleGroup>
-                  <ToggleGroup fx:id="radio_group" />
+                  <ToggleGroup fx:id="radioGroup" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton layoutX="105.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="146.0" text="Нет" toggleGroup="$radio_group" />
-            <RadioButton layoutX="255.0" mnemonicParsing="false" text="Не знаю" toggleGroup="$radio_group" />
+            <RadioButton fx:id="no" layoutX="105.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="146.0" text="Нет" toggleGroup="$radioGroup" />
+            <RadioButton layoutX="255.0" mnemonicParsing="false" text="Не знаю" toggleGroup="$radioGroup" />
          </children>
       </Group>
+      <Label layoutX="300.0" layoutY="272.0" fx:id="pager" />
    </children>
 </AnchorPane>

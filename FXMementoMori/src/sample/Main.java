@@ -9,11 +9,16 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+    private User user;
+
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("main_fx.fxml"));
         Parent root = loader.load();
+        Controller controller = loader.getController();
+
+        controller.setFacade();
         primaryStage.setTitle("Memento Mori");
         Image image = new Image(Main.class.getResource("memento_icon.png").toExternalForm());
         primaryStage.getIcons().add(image);
