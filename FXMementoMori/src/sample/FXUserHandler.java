@@ -12,7 +12,9 @@ public class FXUserHandler implements UserHandler {
     @Override
     public void saveUser(User user) throws Exception {
         try(ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(USER)) ) {
+            ((FXUser)user).setSaved(true);
             objectOutputStream.writeObject(user);
+
         }
     }
 

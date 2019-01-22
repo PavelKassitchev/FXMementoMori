@@ -11,6 +11,16 @@ public class FXUser implements User, Serializable {
     private Date birthDate;
     private int[] userData;
 
+
+    private boolean isSaved;
+
+    public boolean isSaved() {
+        return isSaved;
+    }
+    public void setSaved (boolean isSaved) {
+        this.isSaved = isSaved;
+    }
+
     //TODO below
     // construct a "non-gender" just-born user with default neutral replies to the questions!
     //check vorkability!
@@ -19,7 +29,9 @@ public class FXUser implements User, Serializable {
         gender = 0;
         birthDate = new Date();
         userData = new int[Questions.getLength()];
+        isSaved = false;
     }
+
 
 
     public int getGender() {

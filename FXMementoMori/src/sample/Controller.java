@@ -32,8 +32,6 @@ public class Controller {
 
     private static User user, tempUser;
 
-    private static boolean isOldUser;
-
     private final static String[] questions = Questions.getQuestions();
 
     private static int page;
@@ -44,7 +42,7 @@ public class Controller {
 
 
     public void toIntro(ActionEvent actionEvent) throws Exception {
-        if (isOldUser) {
+        if (((FXUser)user).isSaved()) {
             Stage dialog = new Stage();
             dialog.initStyle(StageStyle.UTILITY);
             VBox box = new VBox();
@@ -60,8 +58,9 @@ public class Controller {
                     closeStage(actionEvent);
                     Introduction introduction = new Introduction();
                     try {
-                        introduction.start(new Stage());
                         tempUser = userHandler.obtainUser();
+                        introduction.start(new Stage());
+
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -89,15 +88,15 @@ public class Controller {
             dialog.initModality(Modality.WINDOW_MODAL);
             dialog.setAlwaysOnTop(true);
             dialog.requestFocus();
-
+            
             dialog.show();
         }
 
         else {
             closeStage(actionEvent);
-        Introduction introduction = new Introduction();
-        introduction.start(new Stage());
-        tempUser = new FXUser();
+            Introduction introduction = new Introduction();
+            introduction.start(new Stage());
+            tempUser = new FXUser();
         }
 
     }
@@ -165,7 +164,6 @@ public class Controller {
         }
         if (page == pages - 1) {
             page = 0;
-            isOldUser = true;
             userHandler.saveUser(tempUser);
             closeStage(actionEvent);
             tempUser = null;
@@ -185,6 +183,7 @@ public class Controller {
 
     public void setQuestion() {
         question.setText(questions[page]);
+        setCheck();
         pager.setText((page + 1) + "/" + pages);
     }
 
@@ -225,7 +224,6 @@ public class Controller {
         userHandler.cleanUser();
         closeStage(actionEvent);
         new Main().start(new Stage());
-        isOldUser = false;
     }
 
     public void toMain(ActionEvent actionEvent) throws Exception {
@@ -255,6 +253,7 @@ public class Controller {
     }
 
     public void setIntro() {
+
         if (tempUser != null) {
             if (!tempUser.getName().equals("Пользователь")) {
                 name.setText(tempUser.getName());
