@@ -38,8 +38,6 @@ public class Controller {
 
     private int pages = questions.length;
 
-    private Stage prevStage;
-
 
     public void toIntro(ActionEvent actionEvent) throws Exception {
         if (((FXUser)user).isSaved()) {
@@ -88,7 +86,7 @@ public class Controller {
             dialog.initModality(Modality.WINDOW_MODAL);
             dialog.setAlwaysOnTop(true);
             dialog.requestFocus();
-            
+
             dialog.show();
         }
 
@@ -234,7 +232,7 @@ public class Controller {
 
     private void closeStage(ActionEvent actionEvent) {
         Button button = (Button)actionEvent.getSource();
-        prevStage = (Stage)button.getScene().getWindow();
+        Stage prevStage = (Stage) button.getScene().getWindow();
         prevStage.close();
     }
 
